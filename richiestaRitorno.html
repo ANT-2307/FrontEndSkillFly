@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritorno?</title>
+    <link href="mioStile.css" rel="Stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Cambria, serif;
+        }
+
+        .barraelement:hover {
+            color: white;
+            background-color: rgb(67, 86, 122);
+        }
+
+        .pulsante {
+            width: 8vw;
+            height: 6vh;
+            padding: 10px;
+            background-color: #66b2c7;
+            border-radius: 12px;
+        }
+
+        .pulsante:hover {
+            color: white;
+            background-color: rgb(67, 86, 122);
+        }
+    </style>
+</head>
+
+<body>
+    <div class=bg>
+        <div class="logoContainer">
+            <div class="partnersContainer">
+                <div class="partnersTesto">Le nostre aziende partner:</div>
+                <div class="partnersImg" id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner rounded-circle">
+                        <div class="carousel-item active" data-interval="8000">
+                            <img src="test1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="2000">
+                            <img src="test2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="test3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img class="logo" src="benissimo.PNG">
+
+            <div class="build">Build: v1.0</div>
+
+        </div>
+        <div class="barra">
+            <a href="form.html" class="barraelement" style="text-decoration: none;">Inserimento</a>
+            <a href="tabella.html" class="barraelement" style="text-decoration: none;">Lista Prenotazioni</a>
+        </div>
+
+        <div class="centro">
+            <form action="" method="" class="insert">
+                <div class="prenotaTesto">AGGIUNGERE IL RITORNO?</div>
+                <br>
+                <input type="hidden" name="" value="">
+                <button type="submit" class="pulsante">SI</button>
+                <br><br>
+                <button type="submit" class="pulsante">NO</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

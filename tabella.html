@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabella Prenotazioni</title>
+    <link href="mioStile.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .barraelement:hover:not(active) {
+            color: white;
+            background-color: rgb(67, 86, 122);
+        }
+
+        /* Stile generale del body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, serif;
+        }
+
+        /* Contenitore della tabella */
+        .container {
+            padding: 20px;
+            margin: 40px auto;
+            background: rgb(186, 186, 228);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 90%;
+        }
+
+        /* Stile per il titolo e per il link "Torna nella Home" */
+        h2 {
+            text-align: center;
+        }
+
+        /* Stile dei pulsanti nella tabella */
+        .btn {
+            background-color: rgb(235, 58, 58);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(226, 9, 9);
+        }
+
+        /* Stile della tabella: aggiungiamo i bordi */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            background-color: rgb(226, 226, 245);
+        }
+
+        /* Stile dei titoli (header) in un colore più scuro */
+        th {
+            background-color: rgb(84, 132, 153);
+            /* Colore più scuro */
+            color: rgb(37, 37, 37);
+            /* Testo bianco per contrasto */
+        }
+
+        /* Righe della tabella al passaggio del mouse */
+        tr:hover {
+            background-color: #d1e7dd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=bg>
+        <div class="logoContainer">
+            <div class="partnersContainer">
+                <div class="partnersTesto">Le nostre aziende partner:</div>
+                <div class="partnersImg" id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner rounded-circle">
+                        <div class="carousel-item active" data-interval="8000">
+                            <img src="test1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="2000">
+                            <img src="test2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="test3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img class="logo" src="benissimo.PNG">
+
+            <div class="build">Build: v1.0</div>
+
+        </div>
+        <div class="barra">
+            <a href="form.html" class="barraelement" style="text-decoration: none;">Inserimento</a>
+            <a href="tabella.html" class="barraelement" style="text-decoration: none;">Lista Prenotazioni</a>
+        </div>
+
+
+        <!-- Div per lo sfondo -->
+        <div class="background"></div>
+
+        <!-- Contenitore della tabella -->
+        <div class="container">
+            <!-- Tabella senza THEAD, con Thymeleaf -->
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome Cliente</th>
+                    <th>Cognome Cliente</th>
+                    <th>Codice Fiscale</th>
+                    <th>Compagnia Aerea</th>
+                    <th>Data Partenza</th>
+                    <th>Data Arrivo</th>
+                    <th>Luogo Partenza</th>
+                    <th>Luogo Arrivo</th>
+                    <th>Numero Adulti</th>
+                    <th>Numero Bambini</th>
+                    <th>Importo Pagato</th>
+                    <th>Bagagli</th>
+                    <th>Azione</th>
+                </tr>
+
+                <!-- Ciclo tramite Thymeleaf per visualizzare i dati -->
+                <tr th:each="prenotazione : ${prenotazioni}">
+                    <td th:text="${prenotazione.id}"></td>
+                    <td th:text="${prenotazione.nomeCliente}"></td>
+                    <td th:text="${prenotazione.cognomeCliente}"></td>
+                    <td th:text="${prenotazione.cfCliente}"></td>
+                    <td th:text="${prenotazione.compagniaAerea}"></td>
+                    <td th:text="${prenotazione.dataPartenza}"></td>
+                    <td th:text="${prenotazione.dataArrivo}"></td>
+                    <td th:text="${prenotazione.da}"></td>
+                    <td th:text="${prenotazione.a}"></td>
+                    <td th:text="${prenotazione.nAdulti}"></td>
+                    <td th:text="${prenotazione.nBambini}"></td>
+                    <td th:text="${prenotazione.importoPagato}"></td>
+                    <td th:text="${prenotazione.bagagli}"></td>
+                    <td>
+                        <form th:action="@{/annullaPrenotazione(id=${prenotazione.id})}" method="post">
+                            <button type="submit" class="btn">Annulla</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

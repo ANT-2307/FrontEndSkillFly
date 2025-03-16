@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, serif;
+    justify-content: center;
+    background-color: #408699;    
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}  
+  .bg {
+    background-image: url("sfondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    width: 100vw; 
+    position: absolute; /* Rende l'immagine fissa */
+    top: 0;
+    left: 0;
+  }
+.logoContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    background-color: #408699;
+    padding-top: 3vh;
+    padding-bottom: 3vh;   
+}
+
+.logoContainer img{
+    width: 17vw;
+    margin-right: 10vw;
+}
+
+.partnersContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partnersTesto{
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 1vh; 
+    font-size: 20px;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.partnersImg{
+    width: 5vw;
+    height: 5vh;
+}
+.build{
+    font-size: 20px;
+    align-items: center;
+    padding-right: 2vw;
+    color: rgba(0, 0, 0, 0.616);
+    opacity: 0.8;
+}
+.barra{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 8vh;
+    background-color: rgb(199, 216, 248);
+    opacity: 0.8;
+}
+.barraelement{
+    color: white;
+    margin-left: 0.5vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    text-decoration: none;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: rgb(130, 150, 187);
+}
+.centro{
+    width: 100vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;    
+}
+.insert{
+    background-color: rgba(255, 255, 255, 0.911);
+    width: 60vw;
+    min-height: 31vh;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    border: 1px solid blue;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.486);
+}
+.prenotaTesto{
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: rgb(16, 49, 71);
+    background-color: #408699;
+    align-self: center;
+    margin-bottom: 20px;
+    width: 20vw;
+    border-radius: 12px;
+}
+.caselle{
+    font-family: Cambria, serif;
+    background-color: #e5e9eb9c;
+    border: 1px solid;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+input{
+    font-family: Cambria, serif;
+    padding-left: 1%;
+    width: 10vw;
+}
+input[type=text]{
+    font-family: Cambria, serif;
+    width: 10vw;
+    padding: 2px;
+    padding-left: 1%;
+    margin-right: 10px;
+}
+input[type=number]{
+    font-family: Cambria, serif;
+    width:5%;
+    padding-left: 1%;
+}
+input[type=date]{
+    width: 7vw;
+    padding-left: 1%;
+}
+input[type=radio]{
+    width: 1vw;
+    padding: 0px;
+}
+.nome{
+    border: none; 
+    border-bottom: 2px solid rgba(0, 0, 0, 0.664);
+    border-radius: 0;
+    width: 10vw;
+    margin-left: 1%;
+    background-color: rgba(255, 255, 255, 0);
+}
+.pulsante{
+    width: 20vw;
+    padding: 5px;
+    background-color: #66b2c7;
+    border-radius: 12px;
+}

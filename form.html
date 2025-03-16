@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link href="mioStile.css" rel="Stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Cambria, serif;
+    }
+
+    .barraelement:hover{
+      color: white;
+      background-color: rgb(67, 86, 122);
+    }
+    .pulsante:hover{
+      color: white;
+      background-color: rgb(67, 86, 122);
+    }
+  </style>
+</head>
+
+<body>
+  <div class=bg>
+    <div class="logoContainer">
+      <div class="partnersContainer">
+        <div class="partnersTesto">Le nostre aziende partner:</div>
+        <div class="partnersImg" id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner rounded-circle">
+            <div class="carousel-item active" data-interval="8000">
+              <img src="test1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+              <img src="test2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="test3.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img class="logo" src="benissimo.PNG">
+
+      <div class="build">Build: v1.0</div>
+
+    </div>
+    <div class="barra">
+      <a href="form.html" class="barraelement" style="text-decoration: none;">Inserimento</a>
+      <a href="tabella.html" class="barraelement" style="text-decoration: none;">Lista Prenotazioni</a>
+    </div>
+
+    <div class="centro">
+      <form action="upsert" method="post" class="insert">
+        <div class="prenotaTesto">PRENOTA IL VOLO</div>
+        <input type="hidden" name="operazione" value="inserimento">
+        <input class=" caselle nome" type="text" placeholder="Nome: " name="nomeCliente">
+        <input class=" caselle nome" type="text" placeholder="Cognome: " name="cognomeCliente">
+        <input class=" caselle" type="text" placeholder="Codice Fiscale" name="cf">
+        <input class=" caselle" type="text" placeholder="Compagnia Aerea" name="compagniaAerea">
+        <br><br>
+        <label>Adulti</label>
+        <input class=" caselle" type="number" placeholder="1" name="nAdulti">
+        <label>Bambini</label>
+        <input class=" caselle" type="number" placeholder="0" name="nBambini">
+        <input class=" caselle" type="text" placeholder="Da:" name="luogoPartenza">
+        <input class=" caselle" type="text" placeholder="A:" name="luogoArrivo">
+        <br><br>
+        <label>Data Partenza</label>
+        <input class=" caselle" type="date" name="dataPartenza">
+        <label>Data Arrivo</label>
+        <input class=" caselle" type="date" name="dataArrivo">
+        <br><br>
+        <label>Prezzo €</label>
+        <input class=" caselle" type="number" placeholder="0" name="importoPagato">
+        <label>Bagaglio?</label>
+        <label>Si</label>
+        <input class=" caselle" type="radio" name="Bagaglio" value="true">
+        <label>No</label>
+        <input class=" caselle" type="radio" name="Bagaglio" value="false">
+        <br>
+        <hr>
+        <button type="submit" class="pulsante">PRENOTA</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
